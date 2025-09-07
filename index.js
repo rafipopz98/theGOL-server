@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 // Proxy: Matches
 app.get("/api/matches/live", async (req, res) => {
   try {
-    const response = await fetch(`${BASE_URL}/matches/live`);
+    const response = await fetch(`${BASE_URL}/matches/football/popular`);
     if (!response.ok) throw new Error(`Upstream error: ${response.status}`);
     const data = await response.json();
     res.json(data);
